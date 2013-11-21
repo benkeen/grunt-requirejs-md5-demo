@@ -1,7 +1,7 @@
 require.config({
 	baseUrl: "/",
 	paths: {
-		appStart: "core/app-start",
+		appStart: "core/core-start",
 		constants: "core/constants",
 
 <%= componentList %>

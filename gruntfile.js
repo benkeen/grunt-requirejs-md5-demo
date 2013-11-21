@@ -16,8 +16,9 @@ module.exports = function(grunt) {
 	// hash. This var is used in various subsequent steps to know what file is where
 	var _componentNameToMD5Path = {};
 
+
 	// Used during the stage + prod builds. This contains a map of [new bundled filename] => old location of source
-	// file. It contains the core file (app-start) and whatever pages have been targeted for bundling in
+	// file. It contains the core file (core-start) and whatever pages have been targeted for bundling in
 	// build-templates/bundling.js
 	var _renamedBundledFiles = {};
 
@@ -133,7 +134,7 @@ module.exports = function(grunt) {
 
 					// this bit's a key optimization step. All this does is list a bunch of component that we KNOW will have already 
 					// been loaded when the pages are loaded, so they're not unnecessarily added to each page bundle. To figure that
-					// out, just look at core/app-start.js to see what's guaranteed to be included on all page loads
+					// out, just look at core/core-start.js to see what's guaranteed to be included on all page loads
 					exclude: [
 						"constants",
 						"handlebars",
@@ -337,8 +338,8 @@ module.exports = function(grunt) {
 	grunt.registerTask('constructPageBundlingData', function() { _constructPageBundlingData(); });
 
 	// uber-verbose. There's probably a nicer way to do this, but hey it's clear
-	grunt.registerTask('setBuildEnv_LOCAL', function() { _setBuildEnvironment(ENVIRONMENTS.LOCAL); });
-	grunt.registerTask('setBuildEnv_PROD',  function() { _setBuildEnvironment(ENVIRONMENTS.PROD); });
+	grunt.registerTask('setBuildEnv_LOCAL', function() { _setBuildEnvironment("LOCAL"); });
+	grunt.registerTask('setBuildEnv_PROD',  function() { _setBuildEnvironment("PROD"); });
 
 	grunt.registerTask('default', ['setBuildEnv_LOCAL', 'template:main']);
 	grunt.registerTask('prod',    [

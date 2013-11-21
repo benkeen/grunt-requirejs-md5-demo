@@ -18,7 +18,7 @@
 
 </div>
 
-<% if (C.MINIMIZED) { %>
+<% if (ENV == "PROD") { %>
 <script src="/build/core-libs.min.js"></script>
 <script src="/libs/require.min.js" data-main="appStartBuild"></script>
 <script src="/core/require.config.js"></script>
