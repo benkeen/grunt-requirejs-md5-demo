@@ -1,0 +1,23 @@
+{
+	"name": "requireJS",
+	"version": "0.0.1",
+	"description": "The CBC Music mobile site",
+	"main": "index.html",
+	"directories": {
+		"test": "tests"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "CBC Music",
+	"license": "GPL",
+	"devDependencies": {
+		"grunt-template": "~0.2.0",
+		"grunt-contrib-requirejs": "~0.4.1",
+		"grunt-contrib-uglify": "~0.2.2",
+		"grunt": "~0.4.1",
+		"grunt-md5": "~0.1.11",
+		"grunt-contrib-clean": "~0.5.0",
+		"grunt-contrib-copy": "~0.4.1"
+	}
+}

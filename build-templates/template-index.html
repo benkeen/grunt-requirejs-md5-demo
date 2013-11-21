@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Grunt-requireJS-md5 demo</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+	<link href="/css/styles.css" rel="stylesheet" />
+</head>
+<body>
+
+<div id="content">
+	<h1>Grunt-requireJS-md5 demo</h1>
+
+	<p>
+		A demo of how to combine the requireJS optimizer and grunt to generate bundled, md5-hash-renamed JS modules.
+	</p>
+
+</div>
+
+<% if (C.MINIMIZED) { %>
+<script src="/build/core-libs.min.js"></script>
+<script src="/libs/require.min.js" data-main="appStartBuild"></script>
+<script src="/core/require.config.js"></script>
+<% } else { %>
+<script src="/libs/jquery-1.8.2.js"></script>
+<script src="/libs/require.js" data-main="appStart"></script>
+<script src="/core/require.config.js"></script>
+<% } %>
+
+</body>
+</html>
